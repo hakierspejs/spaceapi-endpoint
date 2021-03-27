@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import json
+
 import flask
 import requests
 
@@ -10,7 +12,7 @@ app = flask.Flask(__name__)
 def main():
     j = requests.get("https://at.hs-ldz.pl/api/v1/users?online=true").json()
     is_open = bool(j)
-    return {
+    response_json = {
         "api": "0.14",
         "contact": {
             "email": "hakierspejs [ ^ AT ^ ] d33.pl",
@@ -31,6 +33,9 @@ def main():
         "state": {"open": is_open},
         "url": "https://hs-ldz.pl",
     }
+    resp = flask.Response(json.dumps(response_json))
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    return resp
 
 
 if __name__ == "__main__":

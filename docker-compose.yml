@@ -1,6 +1,10 @@
-version: '3.8'
+version: '3.3'
 services:
     spaceapi_endpoint:
         build: .
-        ports:
-            - 3248:5000
+        network_mode: bridge
+        restart: unless-stopped
+        labels:
+          - "traefik.http.routers.spaceapi.rule=Host(`spaceapi.hs-ldz.pl`)"
+          - "traefik.http.routers.spaceapi.entrypoints=websecure"
+          - "traefik.http.routers.spaceapi.tls.certresolver=myresolver"
