@@ -33,7 +33,9 @@ def main():
         "state": {"open": is_open},
         "url": "https://hs-ldz.pl",
     }
-    resp = flask.Response(json.dumps(response_json))
+    resp = flask.Response(
+        json.dumps(response_json), mimetype="application/json"
+    )
     resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
