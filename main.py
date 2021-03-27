@@ -13,7 +13,7 @@ def main():
     j = requests.get("https://at.hs-ldz.pl/api/v1/users?online=true").json()
     is_open = bool(j)
     response_json = {
-        "api": "0.14",
+        "api_compatibility": ["14"],
         "contact": {
             "email": "hakierspejs [ ^ AT ^ ] d33.pl",
             "irc": "irc://irc.freenode.net/hakierspejs",
