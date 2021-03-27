@@ -10,7 +10,27 @@ app = flask.Flask(__name__)
 def main():
     j = requests.get("https://at.hs-ldz.pl/api/v1/users?online=true").json()
     is_open = bool(j)
-    return {}
+    return {
+        "api": "0.14",
+        "contact": {
+            "email": "hakierspejs [ ^ AT ^ ] d33.pl",
+            "irc": "irc://irc.freenode.net/hakierspejs",
+        },
+        "issue_report_channels": ["email"],
+        "location": {
+            "address": "Zielona 30 l.u. 1, Łódź, Poland",
+            "lat": 51.769522,
+            "lon": 19.4451394,
+        },
+        "logo": (
+            "https://raw.githubusercontent.com/hakierspejs/"
+            "wiki/master/media-w-wiki/hakierspejs.png"
+        ),
+        "projects": ["https://code.hs-ldz.pl", "https://wiki.hs-ldz.pl"],
+        "space": "Hakierspejs Łódź",
+        "state": {"open": is_open},
+        "url": "https://hs-ldz.pl",
+    }
 
 
 if __name__ == "__main__":
