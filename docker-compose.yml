@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+    spaceapi_endpoint:
+        build: .
+        ports:
+            - 3248:5000
