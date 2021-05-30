@@ -15,8 +15,8 @@ def main():
     response_json = {
         "api_compatibility": ["14"],
         "contact": {
-            "email": "hakierspejs [ ^ AT ^ ] d33.pl",
-            "irc": "irc://irc.freenode.net/hakierspejs",
+            "email": "kontakt [ ^ AT ^ ] hakierspejs.pl",
+            "irc": "irc://irc.libera.chat/hakierspejs",
         },
         "issue_report_channels": ["email"],
         "location": {
